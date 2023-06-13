@@ -536,11 +536,11 @@ class Helper
     {
         $category_types = [
             '' => '',
-            'accessory' => trans('general.accessory'),
             'asset' => trans('general.asset'),
+            'accessory' => trans('general.accessory'),
             'consumable' => trans('general.consumable'),
-            'component' => trans('general.component'),
-            'license' => trans('general.license'),
+            // 'component' => trans('general.component'),
+            // 'license' => trans('general.license'),
         ];
 
         if($selection != null){

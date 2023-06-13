@@ -54,7 +54,7 @@
                                             <span class="sr-only">{{ trans('general.assets') }}</span>
                                         </th>
                                         <th class="col-md-1 text-right">
-                                            <i class="far fa-keyboard fa-fw" aria-hidden="true" style="font-size: 17px;"></i>
+                                            <i class="fas fa-keyboard fa-fw" aria-hidden="true" style="font-size: 17px;"></i>
                                             <span class="sr-only">{{ trans('general.accessories') }}</span>
                                         </th>
                                         <th class="col-md-1 text-right">

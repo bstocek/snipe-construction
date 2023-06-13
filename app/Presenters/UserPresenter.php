@@ -215,15 +215,15 @@ class UserPresenter extends Presenter
                 'title' => 'Assets',
                 'visible' => true,
             ],
-            [
-                'field' => 'licenses_count',
-                'searchable' => false,
-                'sortable' => true,
-                'switchable' => true,
-                'class' => 'css-license',
-                'title' => 'License',
-                'visible' => true,
-            ],
+            // [
+            //     'field' => 'licenses_count',
+            //     'searchable' => false,
+            //     'sortable' => true,
+            //     'switchable' => true,
+            //     'class' => 'css-license',
+            //     'title' => 'License',
+            //     'visible' => true,
+            // ],
             [
                 'field' => 'consumables_count',
                 'searchable' => false,
@@ -365,7 +365,7 @@ class UserPresenter extends Presenter
     public function emailLink()
     {
         if ($this->email) {
-            return '<a href="mailto:'.$this->email.'">'.$this->email.'</a><a href="mailto:'.$this->email.'" class="hidden-xs hidden-sm"><i class="far fa-envelope"></i></a>';
+            return '<a href="mailto:' . $this->email . '">' . $this->email . '</a><a href="mailto:' . $this->email . '" class="hidden-xs hidden-sm"><i class="far fa-envelope"></i></a>';
         }
 
         return '';
@@ -379,7 +379,7 @@ class UserPresenter extends Presenter
      */
     public function fullName()
     {
-        return html_entity_decode($this->first_name.' '.$this->last_name, ENT_QUOTES | ENT_XML1, 'UTF-8');
+        return html_entity_decode($this->first_name . ' ' . $this->last_name, ENT_QUOTES | ENT_XML1, 'UTF-8');
     }
 
     /**
@@ -407,24 +407,23 @@ class UserPresenter extends Presenter
             }
 
             // Otherwise assume it's an uploaded image
-            return Storage::disk('public')->url('avatars/'.e($this->avatar));
+            return Storage::disk('public')->url('avatars/' . e($this->avatar));
         }
 
         if (Setting::getSettings()->load_remote == '1') {
             if ($this->model->gravatar != '') {
 
                 $gravatar = md5(strtolower(trim($this->model->gravatar)));
-                return '//gravatar.com/avatar/'.$gravatar;
-
+                return '//gravatar.com/avatar/' . $gravatar;
             } elseif ($this->email != '') {
 
                 $gravatar = md5(strtolower(trim($this->email)));
-                return '//gravatar.com/avatar/'.$gravatar;
+                return '//gravatar.com/avatar/' . $gravatar;
             }
         }
 
         // Set a fun, gender-neutral default icon
-        return config('app.url').'/img/default-sm.png';
+        return config('app.url') . '/img/default-sm.png';
     }
 
     /**

@@ -28,7 +28,7 @@
 
 <div class="row">
   <!-- panel -->
-  <div class="col-lg-2 col-xs-6">
+  <div class="col-lg-3 col-xs-6">
       <a href="{{ route('hardware.index') }}">
     <!-- small box -->
     <div class="small-box bg-teal">
@@ -46,7 +46,7 @@
       </a>
   </div><!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
+  {{-- <div class="col-lg-2 col-xs-6">
      <a href="{{ route('licenses.index') }}">
     <!-- small box -->
     <div class="small-box bg-maroon">
@@ -62,10 +62,10 @@
         @endcan
     </div>
      </a>
-  </div><!-- ./col -->
+  </div><!-- ./col --> --}}
 
 
-  <div class="col-lg-2 col-xs-6">
+  <div class="col-lg-3 col-xs-6">
     <!-- small box -->
       <a href="{{ route('accessories.index') }}">
     <div class="small-box bg-orange">
@@ -74,7 +74,7 @@
         <p>{{ strtolower(trans('general.accessories')) }}</p>
       </div>
       <div class="icon" aria-hidden="true">
-        <i class="far fa-keyboard"></i>
+        <i class="fas fa-keyboard"></i>
       </div>
       @can('index', \App\Models\Accessory::class)
           <a href="{{ route('accessories.index') }}" class="small-box-footer">{{ trans('general.view_all') }} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -83,7 +83,7 @@
       </a>
   </div><!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
+  <div class="col-lg-3 col-xs-6">
     <!-- small box -->
 
       <a href="{{ route('consumables.index') }}">
@@ -101,7 +101,7 @@
     </div>
   </div><!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
+  {{-- <div class="col-lg-2 col-xs-6">
     <a href="{{ route('components.index') }}">
    <!-- small box -->
    <div class="small-box bg-yellow">
@@ -117,9 +117,9 @@
        @endcan
    </div>
     </a>
- </div><!-- ./col -->
+ </div><!-- ./col --> --}}
 
- <div class="col-lg-2 col-xs-6">
+ <div class="col-lg-3 col-xs-6">
     <a href="{{ route('users.index') }}">
    <!-- small box -->
    <div class="small-box bg-light-blue">
@@ -170,11 +170,11 @@
                             <a class="btn bg-teal" style="width: 100%" href="{{ route('hardware.create') }}">{{ trans('general.new_asset') }}</a>
                             @endcan
                         </div>
-                        <div class="col-md-3">
+                        {{-- <div class="col-md-3">
                             @can('create', \App\Models\License::class)
                                 <a class="btn bg-maroon" style="width: 100%" href="{{ route('licenses.create') }}">{{ trans('general.new_license') }}</a>
                             @endcan
-                        </div>
+                        </div> --}}
                         <div class="col-md-3">
                             @can('create', \App\Models\Accessory::class)
                                 <a class="btn bg-orange" style="width: 100%" href="{{ route('accessories.create') }}">{{ trans('general.new_accessory') }}</a>
@@ -372,21 +372,21 @@
                                     <span class="sr-only">{{ trans('general.asset_count') }}</span>
                                 </th>
                                 <th class="col-sm-1" data-visible="true" data-field="accessories_count" data-sortable="true">
-                                    <i class="far fa-keyboard" aria-hidden="true"></i>
+                                    <i class="fas fa-keyboard" aria-hidden="true"></i>
                                     <span class="sr-only">{{ trans('general.accessories_count') }}</span>
                                 </th>
                                 <th class="col-sm-1" data-visible="true" data-field="consumables_count" data-sortable="true">
                                     <i class="fas fa-tint" aria-hidden="true"></i>
                                     <span class="sr-only">{{ trans('general.consumables_count') }}</span>
                                 </th>
-                                <th class="col-sm-1" data-visible="true" data-field="components_count" data-sortable="true">
+                                {{-- <th class="col-sm-1" data-visible="true" data-field="components_count" data-sortable="true">
                                     <i class="far fa-hdd" aria-hidden="true"></i>
                                     <span class="sr-only">{{ trans('general.components_count') }}</span>
-                                </th>
-                                <th class="col-sm-1" data-visible="true" data-field="licenses_count" data-sortable="true">
+                                </th> --}}
+                                {{-- <th class="col-sm-1" data-visible="true" data-field="licenses_count" data-sortable="true">
                                     <i class="far fa-save" aria-hidden="true"></i>
                                     <span class="sr-only">{{ trans('general.licenses_count') }}</span>
-                                </th>
+                                </th> --}}
                             </tr>
                             </thead>
                         </table>

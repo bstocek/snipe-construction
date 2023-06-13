@@ -148,7 +148,7 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('view', \App\Models\License::class)
+                            {{-- @can('view', \App\Models\License::class)
                                 <li aria-hidden="true"
                                     {!! (Request::is('licenses*') ? ' class="active"' : '') !!} tabindex="-1">
                                     <a href="{{ route('licenses.index') }}" accesskey="2" tabindex="-1">
@@ -156,12 +156,12 @@
                                         <span class="sr-only">{{ trans('general.licenses') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('index', \App\Models\Accessory::class)
                                 <li aria-hidden="true"
                                     {!! (Request::is('accessories*') ? ' class="active"' : '') !!} tabindex="-1">
                                     <a href="{{ route('accessories.index') }}" accesskey="3" tabindex="-1">
-                                        <i class="far fa-keyboard fa-fw"></i>
+                                        <i class="fas fa-keyboard fa-fw"></i>
                                         <span class="sr-only">{{ trans('general.accessories') }}</span>
                                     </a>
                                 </li>
@@ -174,14 +174,14 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('view', \App\Models\Component::class)
+                            {{-- @can('view', \App\Models\Component::class)
                                 <li aria-hidden="true"{!! (Request::is('components*') ? ' class="active"' : '') !!}>
                                     <a href="{{ route('components.index') }}" accesskey="5" tabindex="-1">
                                         <i class="far fa-hdd fa-fw"></i>
                                         <span class="sr-only">{{ trans('general.components') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
 
                             @can('index', \App\Models\Asset::class)
                                 <li>
@@ -221,18 +221,18 @@
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('create', \App\Models\License::class)
+                                        {{-- @can('create', \App\Models\License::class)
                                             <li {!! (Request::is('licenses/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('licenses.create') }}" tabindex="-1">
                                                     <i class="far fa-save fa-fw" aria-hidden="true"></i>
                                                     {{ trans('general.license') }}
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan --}}
                                         @can('create', \App\Models\Accessory::class)
                                             <li {!! (Request::is('accessories/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('accessories.create') }}" tabindex="-1">
-                                                    <i class="far fa-keyboard fa-fw" aria-hidden="true"></i>
+                                                    <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
                                                     {{ trans('general.accessory') }}</a>
                                             </li>
                                         @endcan
@@ -244,14 +244,14 @@
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('create', \App\Models\Component::class)
+                                        {{-- @can('create', \App\Models\Component::class)
                                             <li {!! (Request::is('components/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('components.create') }}" tabindex="-1">
                                                     <i class="far fa-hdd fa-fw" aria-hidden="true"></i>
                                                     {{ trans('general.component') }}
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan --}}
                                         @can('create', \App\Models\User::class)
                                             <li {!! (Request::is('users/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('users.create') }}" tabindex="-1">
@@ -572,18 +572,18 @@
                                 </ul>
                             </li>
                         @endcan
-                        @can('view', \App\Models\License::class)
+                        {{-- @can('view', \App\Models\License::class)
                             <li{!! (Request::is('licenses*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('licenses.index') }}">
                                     <i class="far fa-save fa-fw"></i>
                                     <span>{{ trans('general.licenses') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan --}}
                         @can('index', \App\Models\Accessory::class)
                             <li{!! (Request::is('accessories*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('accessories.index') }}">
-                                    <i class="far fa-keyboard fa-fw"></i>
+                                    <i class="fas fa-keyboard fa-fw"></i>
                                     <span>{{ trans('general.accessories') }}</span>
                                 </a>
                             </li>
@@ -596,14 +596,14 @@
                                 </a>
                             </li>
                         @endcan
-                        @can('view', \App\Models\Component::class)
+                        {{-- @can('view', \App\Models\Component::class)
                             <li{!! (Request::is('components*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('components.index') }}">
                                     <i class="far fa-hdd fa-fw"></i>
                                     <span>{{ trans('general.components') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan --}}
                         @can('view', \App\Models\PredefinedKit::class)
                             <li{!! (Request::is('kits') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('kits.index') }}">
@@ -746,11 +746,11 @@
                                             {{ trans('general.depreciation_report') }}
                                         </a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('reports/licenses') }}" {{ (Request::is('reports/licenses') ? ' class="active"' : '') }}>
                                             {{ trans('general.license_report') }}
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a href="{{ url('reports/asset_maintenances') }}" {{ (Request::is('reports/asset_maintenances') ? ' class="active"' : '') }}>
                                             {{ trans('general.asset_maintenance_report') }}
@@ -849,7 +849,7 @@
                 </section>
 
             </div><!-- /.content-wrapper -->
-            <footer class="main-footer hidden-print">
+            {{-- <footer class="main-footer hidden-print">
 
                 <div class="pull-right hidden-xs">
                     @if ($snipeSettings->version_footer!='off')
@@ -887,7 +887,7 @@
                 <a target="_blank" href="https://snipeitapp.com" rel="noopener">Snipe-IT</a> is open source software,
                 made with <i class="fas fa-heart" style="color: #a94442; font-size: 10px" aria-hidden="true"></i><span
                         class="sr-only">love</span> by <a href="https://twitter.com/snipeitapp" rel="noopener">@snipeitapp</a>.
-            </footer>
+            </footer> --}}
 
 
 

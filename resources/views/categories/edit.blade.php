@@ -25,7 +25,7 @@
 
 
 
-<!-- EULA text -->
+{{-- <!-- EULA text -->
 <div class="form-group {{ $errors->has('eula_text') ? 'error' : '' }}">
     <label for="eula_text" class="col-md-3 control-label">{{ trans('admin/categories/general.eula_text') }}</label>
     <div class="col-md-7">
@@ -35,9 +35,9 @@
 
         {!! $errors->first('eula_text', '<span class="alert-msg" aria-hidden="true">:message</span>') !!}
     </div>
-</div>
+</div> --}}
 
-<!-- Use default checkbox -->
+{{-- <!-- Use default checkbox -->
 <div class="form-group">
     <div class="col-md-9 col-md-offset-3">
         @if ($snipeSettings->default_eula_text!='')
@@ -52,7 +52,7 @@
             </label>
         @endif
     </div>
-</div>
+</div> --}}
 
 
 <!-- Require Acceptance -->

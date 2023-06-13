@@ -41,7 +41,7 @@
                     <li>
                         <a href="#accessories_tab" data-toggle="tab">
                             <span class="hidden-lg hidden-md">
-                            <i class="far fa-keyboard"></i>
+                            <i class="fas fa-keyboard"></i>
                             </span> <span class="hidden-xs hidden-sm">{{ trans('general.accessories') }}
                                 {!! (($company->accessories) && ($company->accessories->count() > 0 )) ? '<badge class="badge badge-secondary">'.number_format($company->accessories->count()).'</badge>' : '' !!}
                             </span>

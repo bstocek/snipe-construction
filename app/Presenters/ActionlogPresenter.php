@@ -14,7 +14,7 @@ class ActionlogPresenter extends Presenter
                 return $user->present()->nameUrl();
             }
             // The user was deleted
-            return '<del>'.$user->getFullNameAttribute().'</del> (deleted)';
+            return '<del>' . $user->getFullNameAttribute() . '</del> (deleted)';
         }
 
         return '';
@@ -30,7 +30,7 @@ class ActionlogPresenter extends Presenter
                 return $this->model->item->present()->nameUrl();
             }
             // The item was deleted
-            return '<del>'.$item->name.'</del> (deleted)';
+            return '<del>' . $item->name . '</del> (deleted)';
         }
 
         return '';
@@ -43,7 +43,7 @@ class ActionlogPresenter extends Presenter
         if ($this->itemType() == 'asset') {
             return 'fas fa-barcode';
         } elseif ($this->itemType() == 'accessory') {
-            return 'far fa-keyboard';
+            return 'fas fa-keyboard';
         } elseif ($this->itemType() == 'consumable') {
             return 'fas fa-tint';
         } elseif ($this->itemType() == 'license') {
@@ -53,12 +53,11 @@ class ActionlogPresenter extends Presenter
         } elseif ($this->itemType() == 'user') {
             return 'fa-solid fa-people-arrows';
         }
-
     }
 
     public function actionType()
     {
-        return mb_strtolower(trans('general.'.str_replace(' ', '_', $this->action_type)));
+        return mb_strtolower(trans('general.' . str_replace(' ', '_', $this->action_type)));
     }
 
     public function target()
@@ -87,7 +86,7 @@ class ActionlogPresenter extends Presenter
                 return $target->present()->nameUrl();
             }
 
-            return '<del>'.$target->present()->name().'</del>';
+            return '<del>' . $target->present()->name() . '</del>';
         }
 
         return '';

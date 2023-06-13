@@ -313,7 +313,7 @@
                 item_icon = 'fas fa-barcode';
             } else if (value.type == 'accessory') {
                 item_destination = 'accessories';
-                item_icon = 'far fa-keyboard';
+                item_icon = 'fas fa-keyboard';
             } else if (value.type == 'component') {
                 item_destination = 'components';
                 item_icon = 'far fa-hdd';
