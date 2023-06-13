@@ -10,7 +10,7 @@ return array(
     'throttle'               => 'Příliš mnoho neúspěšných pokusů o přihlášení. Zkuste to prosím znovu za :minutes minut.',
 
     'two_factor' => array(
-        'already_enrolled'      => 'Vaše zařízení je již zapsáno.',
+        'already_enrolled'      => 'Vaše nářadí je již zapsáno.',
         'success'               => 'Přihlášení proběhlo úspěšně.',
         'code_required'         => 'Dvoufaktorový kód je povinný.',
         'invalid_code'          => 'Dvoufaktorový kód je neplatný.',

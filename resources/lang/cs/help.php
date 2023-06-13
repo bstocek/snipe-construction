@@ -27,7 +27,7 @@ return [
 
     'components'    => 'Díly jsou položky, které jsou součástí majetku, jako např. HDD, RAM atp.',
 
-    'consumables'   => 'Spotřební materiál jsou takové položky, které jsou v čase spotřebovávány, jako např. toner, inkoust či papír do tiskáren.',
+    'consumables'   => 'Materiál jsou takové položky, které jsou v čase spotřebovávány, jako např. sádra, beton či vruty.',
 
     'depreciations' => 'Můžete nastavit amortizaci majetku pro jeho rovnoměrné odepisování.',
 

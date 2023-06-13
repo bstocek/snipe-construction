@@ -3,7 +3,7 @@
 return [
     'about_locations_title'     => 'O umístěních',
     'about_locations'           => 'Umístění se používá ke sledování informací o poloze uživatelů, majetku a dalších položek',
-    'assets_rtd'                => 'Zařízení', // This has NEVER meant Assets Retired. I don't know how it keeps getting reverted.
+    'assets_rtd'                => 'nářadí', // This has NEVER meant Assets Retired. I don't know how it keeps getting reverted.
     'assets_checkedout'         => 'Předaných zař.',
     'id'                        => 'ID',
     'city'                      => 'Město',
