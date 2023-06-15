@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Initialize Git repository
+        run: git init
+
       - name: Install and configure SSH
         run: |
           if ! which ssh-agent; then
@@ -30,4 +33,3 @@ jobs:
 
       - name: Push to production
         run: git push production HEAD:master
-
