@@ -28,7 +28,15 @@ jobs:
             echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           fi
 
+      - name: Create and checkout 'master' branch
+        run: |
+          git checkout -b master
+          touch README.md
+          git add README.md
+          git commit -m "Initial commit"
+
       - name: Add production remote
-        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
+        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git --work-tree=/home/projects/snipe-construction
+
       - name: Push to production
-        run: git push production HEAD:master
+        run: git push production master
