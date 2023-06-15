@@ -26,8 +26,8 @@ jobs:
           fi
 
       - name: Add production remote
-        run: git remote add https://www.naradi.mynstav100.cz/ ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
+        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
 
       - name: Push to production
-        run: git push https://www.naradi.mynstav100.cz/ HEAD:master
+        run: git push production HEAD:master
 
