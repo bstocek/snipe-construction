@@ -1,0 +1,40 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PRODUCTION_URL: http://www.naradi.mynstav100.cz/
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install SSH client
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install openssh-client -y
+
+      - name: Start SSH agent
+        run: eval $(ssh-agent -s)
+
+      - name: Add SSH private key
+        run: |
+          echo "$SSH_PRIVATE_KEY" | ssh-add -
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+      - name: Add production remote
+        run: |
+          git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
+
+      - name: Push to production
+        run: |
+          git push production HEAD:master
