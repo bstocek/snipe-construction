@@ -14,27 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install SSH client
+      - name: Install and configure SSH
         run: |
-          sudo apt-get update -y
-          sudo apt-get install openssh-client -y
+          if ! which ssh-agent; then
+            sudo apt-get update -y
+            sudo apt-get install openssh-client -y
+          fi
 
-      - name: Start SSH agent
-        run: eval $(ssh-agent -s)
+          eval $(ssh-agent -s)
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
 
-      - name: Add SSH private key
-        run: |
-          echo "$SSH_PRIVATE_KEY" | ssh-add -
-
-      - name: Configure SSH
-        run: |
           mkdir -p ~/.ssh
-          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          if [[ -f /.dockerenv ]]; then
+            echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          fi
 
       - name: Add production remote
-        run: |
-          git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
+        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git
 
       - name: Push to production
-        run: |
-          git push production HEAD:master
+        run: git push production HEAD:master
+
