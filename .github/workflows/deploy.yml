@@ -26,7 +26,7 @@ jobs:
           fi
 
       - name: Add production remote
-        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git git --work-tree=/home/projects/snipe-construction
+        run: git remote add production ssh://uid3356570@shell.websupport.cz:20766/home/repos/snipe-construction.git --work-tree=/home/projects/snipe-construction
 
       - name: Push to production
         run: git push production HEAD:master
