@@ -251,7 +251,7 @@ return [
     'show_current'          => 'Zobrazit aktuální',
     'sign_in'                => 'Přihlásit se',
     'signature'             => 'Podpis',
-    'signed_off_by'         => 'Odepsal:',
+    'signed_off_by'         => 'Odepsal',
     'skin'                   => 'Vzhled',
     'webhook_msg_note'        => 'Oznámení zavolá webhook',
     'webhook_test_msg'        => 'Oh hai! Looks like your :app integration with Snipe-IT is working!',
